@@ -1,0 +1,14 @@
+"0","```r
+datos <- especies_oan %>%
+  separate_rows(codigo_carta_sgm_50000, sep = \",\") %>% 
+  left_join(codigos_ecoregiones, by = \"codigo_carta_sgm_50000\") %>%
+  mutate(presente = 1) %>%
+  drop_na() %>% 
+  select(especie, ecoregion, presente) %>%
+  group_by(especie, ecoregion) %>% 
+  mutate(suma = sum(presente)) %>% 
+  unique() %>% 
+  select(especie, ecoregion, suma) %>% 
+  pivot_wider(names_from = ecoregion, values_from = suma) %>%
+  replace(is.na(.), 0)  # Reemplazar NAs con 0
+```"

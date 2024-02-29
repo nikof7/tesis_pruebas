@@ -1,0 +1,9 @@
+"0","```r
+library(tidyverse)
+codigos_ecoregiones <- read.csv(\"datos/codigos_ecoregiones.csv\") 
+especies_oan <- read.csv(\"datos/especies_oan.csv\") %>% 
+  mutate(especie = paste0(genero, \" \",epiteto),
+         codigo_carta_sgm_50000 = ifelse(codigo_carta_sgm_50000 %in% \"\",\"DD\", codigo_carta_sgm_50000)) %>%
+  select(especie, codigo_carta_sgm_50000)
+head(especies_oan)
+```"

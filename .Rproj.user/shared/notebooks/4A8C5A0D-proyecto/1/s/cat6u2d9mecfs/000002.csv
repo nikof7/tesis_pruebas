@@ -1,0 +1,8 @@
+"0","```r
+n_sgm <- data.frame(
+  ecoregion = c(\"Cuenca sedimentaria del oeste\", \"Cuenca basáltica\", \"Escudo cristalino\", 
+                \"Graben del Santa Lucía\", \"Cuenca sedimentaria gondwánica\", 
+                \"Sierras del Este\", \"Graben de la Laguna Merín\"),
+  valor = c(39, 72, 46, 14, 53, 35, 36)
+  )
+```"
